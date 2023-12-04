@@ -3,8 +3,9 @@ defmodule Day2.CubeConundrumTest do
   alias Day2.CubeConundrum
 
   describe "CubeConundrum" do
-    test "initial test" do
-      expect_result = 8
+    test "initial test to part one and two" do
+      expect_result_part_one = 8
+      expect_result_part_two = 2286
 
       input = """
       Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
@@ -19,12 +20,13 @@ defmodule Day2.CubeConundrumTest do
         |> String.trim_trailing()
         |> String.split("\n")
 
-      assert expect_result ===
+      assert {expect_result_part_one, expect_result_part_two} ===
                CubeConundrum.possible_games(sanitized_input)
     end
 
     test "puzzle test" do
-      expect_result = 2377
+      expect_result_part_one = 2377
+      expect_result_part_two = 71220
 
       input = """
       Game 1: 1 green, 1 blue, 1 red; 3 green, 1 blue, 1 red; 4 green, 3 blue, 1 red; 4 green, 2 blue, 1 red; 3 blue, 3 green
@@ -134,7 +136,7 @@ defmodule Day2.CubeConundrumTest do
         |> String.trim_trailing()
         |> String.split("\n")
 
-      assert expect_result ===
+      assert {expect_result_part_one, expect_result_part_two} ===
                CubeConundrum.possible_games(sanitized_input)
     end
   end
